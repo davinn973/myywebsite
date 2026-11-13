@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davin Alfredo | Personal Branding Professional</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* 4 WARNA UTAMA: SOFT LIGHT MODE */
+            --base-color: #F0F4F8;      /* Biru Pucat Sangat Terang (Dasar Neumorphism) */
+            --primary-color: #6366F1;   /* Indigo Soft (Warna Utama) */
+            --secondary-color: #FFFFFF; /* Putih Bersih */
+            --accent-color: #4F46E5;    /* Indigo Deep (Untuk Aksen Hover) */
+            
+            /* Bayangan Neumorphism */
+            --neo-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+            /* Bayangan Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--base-color);
+            color: #2D3748;
+            overflow-x: hidden;
+        }
+
+        /* --- TASKBAR (NAVBAR) NEUMORPHIC --- */
+        .navbar {
+            background: var(--base-color);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--secondary-color);
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: #4A5568 !important;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION WITH CAROUSEL --- */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .carousel-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        .carousel-item { height: 100vh; }
+        .carousel-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: brightness(1.1) opacity(0.2); /* Sangat Terang & Transparan */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* Neumorphic Profile Image */
+        .profile-wrap {
+            width: 190px; height: 190px;
+            margin: 0 auto 30px;
+            padding: 10px;
+            border-radius: 50%;
+            background: var(--base-color);
+            box-shadow: var(--neo-shadow);
+        }
+
+        .profile-img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+
+        /* --- CARDS: GLASSMORPHISM + NEUMORPHISM --- */
+        .custom-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            box-shadow: var(--neo-shadow);
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--primary-color);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-neo {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--neo-shadow);
+        }
+
+        .btn-primary-neo { background: var(--primary-color); color: white; }
+        .btn-white-neo { background: white; color: var(--primary-color); }
+
+        .btn-neo:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+            filter: brightness(1.1);
+            color: white;
+        }
+
+        section { padding: 120px 0; }
+        .title-text { font-weight: 800; color: #2D3748; margin-bottom: 40px; }
+        .accent-span { color: var(--primary-color); }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">DAVIN<span class="accent-span">.A</span></a>
+            <div class="ms-auto d-none d-lg-block">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Who Am I</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div id="bgCarousel" class="carousel slide carousel-fade carousel-bg" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="BG 1"></div>
+                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174" alt="BG 2"></div>
+                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="BG 3"></div>
+                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407" alt="BG 4"></div>
+            </div>
+        </div>
+
+        <div class="container hero-content" data-aos="zoom-out" data-aos-duration="1500">
+            <div class="profile-wrap">
+                <img src="fotoprofil.jpeg" alt="fotoprofil.jpeg" class="profile-img">
+            </div>
+            <h1 class="display-1 fw-bold">DAVIN <span class="accent-span">ALFREDO</span></h1>
+            <p class="fs-4 text-muted mb-5 fw-light">Hello, I'm Davin Alfredo!</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="#contact" class="btn btn-neo btn-primary-neo">Contact Me</a>
+                <a href="#research" class="btn btn-neo btn-white-neo">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container text-center">
+            <h2 class="display-4 title-text" data-aos="fade-up">WHO <span class="accent-span">AM I</span></h2>
+            <div class="custom-card mx-auto animate-panel" style="max-width: 900px;" data-aos="fade-up" data-tilt>
+                <p class="lead lh-lg">Halo Semuanya, Namaku adalah Davin Alfredo. Hobby saya adalah menggambar dan bermain game. Saat ini saya sedang bersekolah di SMA Kristen Kalam Kudus Malenggang.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching" style="background: white;">
+        <div class="container">
+            <h2 class="display-4 title-text text-center" data-aos="fade-up">ACHIEVEMENTS</h2>
+            <div class="row g-5">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="custom-card h-100" data-tilt>
+                        <i class="bi bi-mortarboard fs-1 accent-span mb-3"></i>
+                        <h3>Juara 2 Pijar Kreasi</h3>
+                        <p class="text-muted">Saya pernah memenangkan lomba Pijar Kreasi sebagai juara kedua.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="custom-card h-100" data-tilt>
+                        <i class="bi bi-cpu fs-1 accent-span mb-3"></i>
+                        <h3>Deutsche Tage 2026</h3>
+                        <p class="text-muted">Saya pernah berpartisipasi dalam lomba Deutsche Tage 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container text-center">
+            <h2 class="display-4 title-text" data-aos="fade-up">PORTFOLIO</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="flip-left">
+                    <div class="custom-card p-0 overflow-hidden">
+                        <img src="WhatsApp Image 2026-11-13 at 13.59.41.jpeg" class="w-100" alt="Work">
+                    </div>
+                    <div class="custom-card p-0 overflow-hidden">
+                        <img src="WhatsApp Image 2026-11-13 at 14.00.08.jpeg" class="w-100" alt="Work">
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container text-center">
+            <div class="custom-card" data-aos="zoom-in">
+                <h2 class="display-4 title-text">GET IN <span class="accent-span">TOUCH</span></h2>
+                <div class="row mb-5 fs-5">
+                    <div class="col-md-6 mb-3"><i class="bi bi-whatsapp me-2 accent-span"></i>089505024422</div>
+                    <div class="col-md-6 mb-3"><i class="bi bi-envelope-at me-2 accent-span"></i>davvv_nn</div>
+                </div>
+                <div class="d-flex justify-content-center gap-4 fs-2">
+                    <a href="#" class="accent-span"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="accent-span"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="accent-span"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 opacity-50 fw-bold">
+        <p>&copy; 2026 Davin Alfredo. Elegant Neumorphic Concept.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 1000 });
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 5,
+            speed: 300,
+            glare: true,
+            "max-glare": 0.1
+        });
+    </script>
+</body>
+</html>
